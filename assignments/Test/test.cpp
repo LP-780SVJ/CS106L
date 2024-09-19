@@ -1,8 +1,12 @@
 #include <iostream>
-
+#include <fstream>
+#include <string>
 using namespace std;
 
 int main() {    
-    cout << "Hello, world!" << endl;
+    ofstream myfile;
+    myfile.open("myFile.txt");
+    myfile << "Hello, world!" << endl;
+    myfile.close();
     return 0;
 }
