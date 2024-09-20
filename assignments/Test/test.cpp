@@ -39,7 +39,8 @@ void PrintTableBody() {
 
 
     /*Loop over the lines in the file reading data*/
-    for (int k=0; k<NUM_LINES; ++k){
+    
+    /*for (int k=0; k<NUM_LINES; ++k){
         int intValue;
         double doubleValue;
         input >> intValue >> doubleValue;
@@ -47,7 +48,25 @@ void PrintTableBody() {
         cout << setw(COLUMN_WIDTH) << (k+1) << " | "
              << setw(COLUMN_WIDTH) << intValue << " | "
              << setw(COLUMN_WIDTH) << doubleValue << endl;
+    }*/
+
+    int rowNumber = 0;
+    while (true){
+        //Use 'while(true) plus break', not 'while(!input.fail())'.
+        //Use the "loop-and-a-half" idiom to avoid the need for an extra excution.
+        int intValue;
+        double doubleValue;
+        input >> intValue >> doubleValue;
+
+        if (input.fail()) break;
+
+        cout << setw(COLUMN_WIDTH) << (rowNumber+1) << " | ";
+        cout << setw(COLUMN_WIDTH) << intValue << " | ";
+        cout << setw(COLUMN_WIDTH) << doubleValue << endl;
+
+        rowNumber++;
     }
+
 }
 
 
