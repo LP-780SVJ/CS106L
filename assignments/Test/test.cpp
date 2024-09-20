@@ -10,18 +10,27 @@ const int COLUMN_WIDTH = 20;
 
 void PrintTableHeader() {
     /*Print the ---...---+- pattern for all but the last column*/
-    for (int column = 0; column < NUM_COLUMNS-1; ++column){
+    
+    /*for (int column = 0; column < NUM_COLUMNS-1; ++column){
         for (int i = 0; i < COLUMN_WIDTH; ++i){
             cout << '-';
         }
         cout << "-+-``";
+    }*/
+
+    for (int column = 0; column < NUM_COLUMNS-1 ; ++column){
+        cout << setfill('-') << setw(COLUMN_WIDTH) << "" << "-+-";
     }
 
     /*Now print the ---...--- pattern for the last column*/
-    for(int k = 0; k < COLUMN_WIDTH; ++k){
+    
+    /*for(int k = 0; k < COLUMN_WIDTH; ++k){
         cout << '-';
     }
-    cout << endl;
+    cout << endl;*/
+
+    cout << setw(COLUMN_WIDTH) << "" << setfill(' ') << endl;
+    
 }
 
 void PrintTableBody() {
