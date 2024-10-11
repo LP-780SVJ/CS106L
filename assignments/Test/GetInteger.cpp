@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int GetIneger(){
+auto GetIneger() -> int{
     while(true){    //Read input until user enters valid data
         stringstream converter;
         string input;
@@ -27,7 +27,6 @@ int GetIneger(){
             cout << "Please enter a valid integer: " << endl;
         }
         cout << "Retry: ";
-
     }
 }
 
